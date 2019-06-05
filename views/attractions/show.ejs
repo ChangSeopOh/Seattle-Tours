@@ -1,0 +1,85 @@
+<%include ../partials/header %>
+ 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-3"> 
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+            <!--MAP-->
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+              <img src="<%=attraction.image%>" class="card-img-top" alt="<%= attraction.name %>">
+              <div class="card-body">
+                <p class="float-right"> $<%= attraction.price %>/night</p>
+                <h5 class="card-title"><%= attraction.name %></h5>
+                <p>
+                    <em>Submitted By <%=attraction.author.username%></em>
+                </p>
+                <hr>
+                <p class="card-text"><%=attraction.description%></p>
+                 
+                    <% if(currentUser&&attraction.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-warning" href="/attractions/<%=attraction._id%>/edit">Edit</a>
+                        <form id="delete-form" action="/attractions/<%=attraction._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>    
+                        </form>
+                    <% } %>
+              </div>
+            </div> 
+
+            <div class="card">
+                <div class="card-body">
+                    
+                <div class="text-right">
+                     <a class="btn btn-success" href="/attractions/<%=attraction._id%>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                   <div class="row">
+                <%attraction.comments.forEach(function(comment){ %>
+
+
+                       <div class="col-md-12 mb-2">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-left">
+                                <p class="card-title"><strong><%=comment.author.username%></strong></p>
+                                <p class="card-text"><%=comment.text%> </p></div>
+                                <div class="float-right">
+                                    <p>10 days ago</p>
+
+                                <% if(currentUser&&comment.author.id.equals(currentUser._id)){ %>
+                                <div class="float-right">
+                                    <a class="btn btn-sm btn-warning" href="/attractions/<%=attraction._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                                    <form id="delete-form" action="/attractions/<%=attraction._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-sm btn-danger">Delete</button>    
+                                    </form>
+                                </div>
+                                <% } %> 
+                                </div>
+
+
+            
+                            </div>
+                        </div>
+                        </div>
+                    <% })%>
+                        </div> 
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+    </div> 
+</div>
+ 
+ 
+
+
+
+<%include ../partials/footer %>
