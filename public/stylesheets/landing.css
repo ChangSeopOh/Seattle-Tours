@@ -47,22 +47,22 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(https://images.unsplash.com/photo-1476820865390-c52aeebb9891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) 
+  background-image: url(https://cdn.pixabay.com/photo/2017/06/05/08/15/seattle-2373228_1280.jpg) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-image: url(https://cdn.pixabay.com/photo/2018/07/29/07/49/usa-3569692_1280.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2015/06/04/17/52/seattle-797652_1280.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2015/08/28/18/25/seattle-912274_1280.jpg);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2015/08/01/13/47/seattle-870282_1280.jpg);
   animation-delay: 40s; 
 }
 
