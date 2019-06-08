@@ -8,7 +8,7 @@
 - Login, Register
 - Landing Page
 - User auth
-
+- heroku added
 
 # Things to do
 - Image upload (multer and Cludinary)
