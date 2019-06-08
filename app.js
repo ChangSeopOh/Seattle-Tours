@@ -1,3 +1,5 @@
+require('dotenv').config();
+
     //nvm(node version manager) at least 8 to use hook up method.
     //nodemon to use auto start function.
 
@@ -49,8 +51,18 @@ app.use(methodOverride("_method")); //it should be in front of  app.use(route) t
 app.use("/attractions",attractionRoutes);
 app.use("/attractions/:id/comments",commentRoutes);
 app.use("/",indexRoutes);
+//local
+//mongoose.connect("mongodb://localhost:27017/seattle_tours", {useNewUrlParser:true, useFindAndModify: false });
 
-mongoose.connect("mongodb://localhost:27017/seattle_tours", {useNewUrlParser:true, useFindAndModify: false });
+mongoose.connect(process.env.DATABASEURL, {
+  useNewUrlParser:true, 
+  useFindAndModify: false 
+}).then(()=>{
+  console.log('Conntected to DB!');
+}).catch(err =>{
+  console.log('DB Error : ', err.message);
+});
+
   
 
 //seedDB();  //seed the database
