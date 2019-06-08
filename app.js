@@ -13,7 +13,7 @@ var express = require("express"),
    User = require("./models/user"),
    methodOverride = require("method-override"); 
 const port = process.env.PORT || 3000;
-
+const server = process.env.IP;
 //requring routes!!
 var commentRoutes = require("./routes/comments");
 var attractionRoutes = require("./routes/attractions");
@@ -70,7 +70,7 @@ mongoose.connect(process.env.DATABASEURL, {
 // app.listen(process.env.PORT, process.env.IP, function(){
 //       console.log(`Server is running`);
 // });
- app.listen(port,"0.0.0.0",function(){
+ app.listen(port,server,function(){
     console.log("Server has started ....");
 });
 
