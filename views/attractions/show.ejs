@@ -2,19 +2,19 @@
  
 <div class="container">
     <div class="row">
-        <div class="col-md-3 mb-3"> 
+        <div class="col-md-3 mb-3"> <!-- 
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
                 <li class="list-group-item">Info 2</li>
                 <li class="list-group-item">Info 3</li>
-            </div>
+            </div> -->
             <!--MAP-->
         </div>
         <div class="col-md-9">
             <div class="card">
               <img src="<%=attraction.image%>" class="card-img-top" alt="<%= attraction.name %>">
               <div class="card-body">
-                <p class="float-right"> $<%= attraction.price %>/night</p>
+                <p class="float-right"> $<%= attraction.price %></p>
                 <h5 class="card-title"><%= attraction.name %></h5>
                 <p>
                     <em>Submitted By <%=attraction.author.username%></em>
@@ -50,7 +50,7 @@
                                 <p class="card-title"><strong><%=comment.author.username%></strong></p>
                                 <p class="card-text"><%=comment.text%> </p></div>
                                 <div class="float-right">
-                                    <p>10 days ago</p>
+                                  <!--   <p>10 days ago</p> -->
 
                                 <% if(currentUser&&comment.author.id.equals(currentUser._id)){ %>
                                 <div class="float-right">
